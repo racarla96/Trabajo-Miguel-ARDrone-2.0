@@ -1,0 +1,97 @@
+%% Lissajous 1
+f1=0.002 ; A1=10 ;
+f2=0.003 ; A2=10 ;
+f3=0.001 ; A3=10 ; 
+Xp=A1*sin(2*pi*f1*[0:10:1/(min([f1,f2,f3]))]) ;
+Yp=A2*sin(2*pi*f2*[0:10:1/(min([f1,f2,f3]))]) ;
+np=length(Xp);
+No=10;
+T=0.05;
+D=0.3;
+M=[Xp ; Yp ]';
+%% Lissajous 2
+f1=0.02 ; A1=10 ;
+f2=0.03 ; A2=10 ;
+f3=0.01 ; A3=10 ; 
+Xp=A1*sin(2*pi*f1*[0:10:1/(min([f1,f2,f3]))]) ;
+Yp=A2*sin(2*pi*f2*[0:10:1/(min([f1,f2,f3]))]) ;
+np=length(Xp);
+No=10;
+T=0.05;
+D=0.5;
+M=[Xp ; Yp ]';
+%plot(Xp,Yp)
+%% Circulo 2D
+r=5;
+x=-r;
+y=0;
+th = 0:pi/50:2*pi-pi/50;
+Xp =- ( r * cos(th) + x);
+Yp =- ( r * sin(th) + y);
+np=length(Xp);
+No=10;
+T=0.05;
+D=0.8;
+M=[Xp ; Yp ]';
+%plot(Xp, Yp);
+%% 2 Circulos
+r=2.5;
+x=-r;
+y=0;
+No=10;
+T=0.05;
+D=1;
+th = 0:pi/50:1*pi-pi/50;
+Xp1 =- ( r * cos(th) + x);
+Yp1 =- ( r * sin(th) + y);
+x=-3*r;
+y=0;
+th = 0:pi/50:2*pi-pi/50;
+Xp2 =- ( r * cos(th) + x);
+Yp2 = ( r * sin(th) + y);
+x=r;
+y=0;
+th = 0:pi/50:1*pi-pi/50;
+Xp3 = ( r * cos(th) + x);
+Yp3 = ( r * sin(th) + y);
+Xp=[Xp1 Xp2 Xp3];
+Yp=[Yp1 Yp2 Yp3];
+np=length(Xp);
+M=[Xp ; Yp ]';
+plot(Xp, Yp);
+%% Cuadrado 2D
+Xp=[0 5 5 0 0];
+Yp=[0 0 5 5 0];
+X=[0 2.5 5 5 5 2.5 0 0];
+Y=[0 0 0 2.5 5 5 5 2.5];
+np=length(Xp);
+T=0.05;
+No=10;
+D=0.5;
+M=[X ; Y ]';
+%% Cuadrado 3D
+Xp=[0 5 5 0 0];
+Yp=[0 0 5 5 0];
+Zp=[5 5 5 5 5];
+X=[0 2.5 5 5 5 2.5 0 0];
+Y=[0 0 0 2.5 5 5 5 2.5];
+Z=[5 5 5 5 5 5 5 5];
+np=length(Xp);
+T=0.05;
+No=10;
+M=[X ; Y ; Z]';
+D=1;
+%% Espiral 3D
+r=2;
+x=-r;
+y=0;
+th = 0:pi/50:4*pi;
+Zp = 0:0.1:20;
+Xp =- ( r * cos(th) + x);
+Yp =- ( r * sin(th) + y);
+np=length(Xp);
+No=10;
+T=0.05;
+M=[Xp ; Yp ; Zp]';
+D=1;
+plot3(Xp, Yp, Zp);
